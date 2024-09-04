@@ -207,6 +207,11 @@ pub enum RawWindowHandle {
     /// ## Availability Hints
     /// This variant is used on HaikuOS.
     Haiku(HaikuWindowHandle),
+    /// A raw window handle for wasi.
+    ///
+    /// ## Availability Hints
+    /// This variant is used on wasi.
+    Wasi,
 }
 
 /// Display that wraps around a raw display handle.
@@ -341,6 +346,11 @@ pub enum RawDisplayHandle {
     /// ## Availability Hints
     /// This variant is used on HaikuOS.
     Haiku(HaikuDisplayHandle),
+    /// A raw display handle for wasi.
+    ///
+    /// ## Availability Hints
+    /// This variant is used on wasi.
+    Wasi,
 }
 
 /// An error that can occur while fetching a display or window handle.
