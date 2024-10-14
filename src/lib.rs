@@ -41,6 +41,7 @@ mod ohos;
 mod redox;
 mod uikit;
 mod unix;
+mod wasi;
 mod web;
 mod windows;
 
@@ -55,6 +56,7 @@ pub use unix::{
     DrmDisplayHandle, DrmWindowHandle, GbmDisplayHandle, GbmWindowHandle, WaylandDisplayHandle,
     WaylandWindowHandle, XcbDisplayHandle, XcbWindowHandle, XlibDisplayHandle, XlibWindowHandle,
 };
+pub use wasi::{WasiDisplayHandle, WasiWindowHandle};
 pub use web::{
     WebCanvasWindowHandle, WebDisplayHandle, WebOffscreenCanvasWindowHandle, WebWindowHandle,
 };
@@ -211,7 +213,7 @@ pub enum RawWindowHandle {
     ///
     /// ## Availability Hints
     /// This variant is used on wasi.
-    Wasi,
+    Wasi(WasiWindowHandle),
 }
 
 /// Display that wraps around a raw display handle.
@@ -350,7 +352,7 @@ pub enum RawDisplayHandle {
     ///
     /// ## Availability Hints
     /// This variant is used on wasi.
-    Wasi,
+    Wasi(WasiDisplayHandle),
 }
 
 /// An error that can occur while fetching a display or window handle.
